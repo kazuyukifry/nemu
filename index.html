@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ねむさんへ、神奈川撮影プランのご提案</title>
+<title>ねむさんへ 神奈川撮影プランのご提案</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -188,12 +188,13 @@
 
 /* ---------- meeting ---------- */
 .nemu-plans-wrap .npw-meeting{
+  --sky:#3a8dc4;
   display:flex;align-items:stretch;gap:0;
   background:#fff;border-radius:24px;
   box-shadow:0 16px 48px -24px rgba(120,110,100,.28), 0 2px 0 rgba(0,0,0,.01);
   margin-bottom:clamp(36px,6vw,56px);
   overflow:hidden;
-  border:2px solid rgba(156,209,234,.35);
+  border:2px solid rgba(58,141,196,.3);
 }
 .nemu-plans-wrap .npw-meeting-timecol{
   flex:0 0 auto;
@@ -210,6 +211,14 @@
 .nemu-plans-wrap .npw-meeting-timecol .mtime-label{
   font-size:clamp(10px,2.2vw,11px);letter-spacing:.14em;
   color:var(--sky);font-weight:700;
+}
+.nemu-plans-wrap .npw-meeting-timecol .mtime-date{
+  font-size:clamp(9px,2vw,10px);letter-spacing:.06em;
+  color:var(--sky);font-weight:700;
+  margin-top:6px;padding-top:6px;
+  border-top:1px solid rgba(58,141,196,.25);
+  text-align:center;line-height:1.5;
+  opacity:.85;
 }
 .nemu-plans-wrap .npw-meeting-body{
   flex:1;padding:clamp(18px,3.5vw,28px) clamp(16px,3.5vw,28px);
@@ -268,6 +277,34 @@
   background:var(--sky);color:#fff;
 }
 .nemu-plans-wrap .npw-meeting-maplink-arrow{margin-left:auto;font-size:1.1em;}
+.nemu-plans-wrap .npw-meeting-car{
+  display:flex;align-items:center;gap:clamp(12px,3vw,20px);
+  margin-top:clamp(12px,2.5vw,16px);
+  padding:clamp(10px,2vw,14px) clamp(14px,3vw,18px);
+  background:rgba(90,84,80,.04);
+  border-radius:12px;
+  border:1.5px solid rgba(90,84,80,.1);
+}
+.nemu-plans-wrap .npw-meeting-car img{
+  flex:0 0 auto;
+  width:clamp(80px,18vw,120px);
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.12));
+}
+.nemu-plans-wrap .npw-meeting-car-text{
+  font-family:"Klee One",serif;
+  font-size:clamp(12px,2.7vw,14px);
+  color:var(--ink);
+  line-height:1.8;
+}
+.nemu-plans-wrap .npw-meeting-car-text strong{
+  display:block;
+  font-size:clamp(13px,2.9vw,15px);
+  color:#4a4540;
+  font-weight:700;
+  margin-bottom:2px;
+}
 
 /* ---------- closing ---------- */
 .nemu-plans-wrap .npw-closing{
@@ -285,6 +322,37 @@
 .nemu-plans-wrap .npw-closing .npw-sign{
   margin-top:clamp(18px,3.5vw,24px);font-size:clamp(13px,2.8vw,15px);color:var(--ink-soft);
 }
+
+/* ---------- decided plan ---------- */
+.nemu-plans-wrap .npw-plan.is-decided{
+  box-shadow:0 28px 64px -24px rgba(159,217,193,.55), 0 2px 0 rgba(0,0,0,.01);
+}
+.nemu-plans-wrap .npw-plan.is-decided::before{opacity:.55;}
+.nemu-plans-wrap .npw-decided-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--mint);color:#fff;
+  font-size:clamp(11px,2.4vw,12px);font-weight:700;letter-spacing:.12em;
+  padding:5px 16px 5px 12px;border-radius:999px;
+  margin-bottom:clamp(14px,2.5vw,18px);
+  box-shadow:0 4px 14px -4px rgba(159,217,193,.6);
+}
+.nemu-plans-wrap .npw-decided-badge::before{content:"✓";font-size:13px;}
+
+/* ---------- reference divider ---------- */
+.nemu-plans-wrap .npw-ref-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:clamp(8px,2vw,16px) 0 clamp(32px,5vw,48px);
+  font-size:clamp(11px,2.4vw,13px);font-weight:700;
+  color:var(--ink-soft);letter-spacing:.18em;
+  white-space:nowrap;
+}
+.nemu-plans-wrap .npw-ref-divider::before,
+.nemu-plans-wrap .npw-ref-divider::after{
+  content:"";flex:1;height:1.5px;border-radius:2px;
+  background:rgba(140,132,126,.2);
+}
+.nemu-plans-wrap .npw-plan.is-ref{opacity:.72;}
+.nemu-plans-wrap .npw-plan.is-ref:hover{opacity:1;transition:opacity .2s;}
 
 @media(min-width:680px){
   .nemu-plans-wrap .npw-meta{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 24px;}
@@ -307,13 +375,13 @@
     <!-- ① ヒーロー -->
     <header class="npw-hero">
       <span class="npw-eyebrow">PHOTO PLAN</span>
-      <h1><span class="npw-name">ねむさん</span>へ、<br>神奈川撮影プランのご提案</h1>
+      <h1><span class="npw-name">ねむさん</span>へ<br>神奈川撮影プランのご提案</h1>
       <div class="npw-sub">
-        <span class="npw-date">2026.05.31 Sun</span>
+        <span class="npw-date">2026.5.31 Sun</span>
         <span class="npw-dot"></span>
         <span>8:30 横浜駅 集合</span>
         <span class="npw-dot"></span>
-        <span>12:00 横浜駅 解散</span>
+        <span>13:00 横浜駅 解散</span>
       </div>
     </header>
 
@@ -322,6 +390,7 @@
       <div class="npw-meeting-timecol">
         <span class="mtime-num">8:30</span>
         <span class="mtime-label">AM</span>
+        <span class="mtime-date">5.31<br>Sun</span>
       </div>
       <div class="npw-meeting-body">
         <div class="npw-meeting-eyebrow">MEETING POINT &nbsp;/&nbsp; 待ち合わせ場所</div>
@@ -330,7 +399,7 @@
           <ol class="npw-meeting-steps">
             <li><strong>「中央北改札」</strong>または<strong>「中央南改札」</strong>から出る</li>
             <li><strong>「東口」</strong>と書かれた階段・エスカレーターの手前（ルミネの脇）から地上へ上がる</li>
-            <li>地上に出て、喫煙所や公衆トイレがある広場のところで車を停めてお待ちしています</li>
+            <li>喫煙所や公衆トイレがある広場のところに車を停めてお待ちしています</li>
           </ol>
           <a class="npw-meeting-maplink" href="https://www.orion-ski.jp/fair/special/route/pdf/yokohama01.pdf" target="_blank" rel="noopener">
             <span class="npw-meeting-maplink-icon">🗺</span>
@@ -338,11 +407,49 @@
             <span class="npw-meeting-maplink-arrow">→</span>
           </a>
         </div>
+        <div class="npw-meeting-car">
+          <img src="https://kfgopro.com/wordpress/wp-content/uploads/2026/05/freed.png
+        " alt="濃いグレーのホンダ車">
+          <div class="npw-meeting-car-text">
+            <strong>濃いグレーのホンダ車</strong>
+            ロータリーでお待ちしています。車内からお声がけしますね。
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- ② プランA -->
-    <section class="npw-plan npw-a">
+    <!-- ② プランD（決定） -->
+    <section class="npw-plan npw-d is-decided">
+      <div class="npw-decided-badge">決定プラン</div>
+      <div class="npw-head">
+        <div class="npw-badge"><span class="npw-bp">PLAN</span><span class="npw-bl">D</span></div>
+        <div class="npw-titles">
+          <div class="npw-tlabel">ソレイユの丘</div>
+          <h2>南フランスの非日常</h2>
+        </div>
+      </div>
+      <figure class="npw-photo"><img src="https://kfgopro.com/wordpress/wp-content/uploads/2026/05/planD-1024x768.jpg" alt="プランD ソレイユの丘"></figure>
+      <div class="npw-meta">
+        <div class="npw-metarow"><span class="npw-mlabel">移動</span><span class="npw-mtext">車</span></div>
+        <div class="npw-metarow"><span class="npw-mlabel">雰囲気</span>
+          <div class="npw-tags"><span class="npw-tag">南フランス</span><span class="npw-tag">プロヴァンス風</span><span class="npw-tag">お花畑</span><span class="npw-tag">非日常感</span></div>
+        </div>
+      </div>
+      <div class="npw-tlhead">行程（目安）</div>
+      <div class="npw-timeline">
+        <div class="npw-step"><span class="npw-time">08:30</span><div class="npw-act">横浜駅 出発（車）</div></div>
+        <div class="npw-step"><span class="npw-time">09:30</span><div class="npw-act">ソレイユの丘 到着・撮影開始<br><span class="npw-note">（ポピー・紫陽花エリア、風の丘、プロヴァンス広場など）</span></div></div>
+        <div class="npw-step"><span class="npw-time">12:00</span><div class="npw-act">撮影終了・帰路</div></div>
+        <div class="npw-step"><span class="npw-time"></span><div class="npw-act"><span class="npw-note">時間があれば海沿いに寄り道（葉山のバス停やプリン屋さんなど）</span></div></div>
+        <div class="npw-step is-end"><span class="npw-time">13:00</span><div class="npw-act">横浜駅 解散</div></div>
+      </div>
+    </section>
+
+    <!-- 参考プラン 区切り -->
+    <div class="npw-ref-divider">参考プラン</div>
+
+    <!-- 参考 プランA -->
+    <section class="npw-plan npw-a is-ref">
       <div class="npw-head">
         <div class="npw-badge"><span class="npw-bp">PLAN</span><span class="npw-bl">A</span></div>
         <div class="npw-titles">
@@ -369,8 +476,8 @@
       </div>
     </section>
 
-    <!-- ② プランB -->
-    <section class="npw-plan npw-b">
+    <!-- 参考 プランB -->
+    <section class="npw-plan npw-b is-ref">
       <div class="npw-head">
         <div class="npw-badge"><span class="npw-bp">PLAN</span><span class="npw-bl">B</span></div>
         <div class="npw-titles">
@@ -392,12 +499,12 @@
         <div class="npw-step"><span class="npw-time">10:00</span><div class="npw-act">森戸神社 撮影</div></div>
         <div class="npw-step"><span class="npw-time">10:30</span><div class="npw-act">新名瀬バス停・周辺 撮影</div></div>
         <div class="npw-step"><span class="npw-time">11:00</span><div class="npw-act">葉山マリーナ 撮影</div></div>
-        <div class="npw-step is-end"><span class="npw-time">12:00</span><div class="npw-act">横浜駅 解散（帰路）</div></div>
+        <div class="npw-step is-end"><span class="npw-time">12:00</span><div class="npw-act">横浜駅 解散</div></div>
       </div>
     </section>
 
-    <!-- ② プランC -->
-    <section class="npw-plan npw-c">
+    <!-- 参考 プランC -->
+    <section class="npw-plan npw-c is-ref">
       <div class="npw-head">
         <div class="npw-badge"><span class="npw-bp">PLAN</span><span class="npw-bl">C</span></div>
         <div class="npw-titles">
@@ -421,31 +528,6 @@
         <div class="npw-step"><span class="npw-time">10:40</span><div class="npw-act">江ノ電で移動<br><span class="npw-note">（稲村ケ崎 or 七里ガ浜 or 鎌倉高校前：当日相談）</span></div></div>
         <div class="npw-step"><span class="npw-time">11:00</span><div class="npw-act">海岸・Pacific DRIVE-IN・スラムダンク踏切 撮影</div></div>
         <div class="npw-step"><span class="npw-time">11:40</span><div class="npw-act">江ノ電・横須賀線で横浜へ</div></div>
-        <div class="npw-step is-end"><span class="npw-time">12:00</span><div class="npw-act">横浜駅 解散</div></div>
-      </div>
-    </section>
-
-    <!-- ② プランD -->
-    <section class="npw-plan npw-d">
-      <div class="npw-head">
-        <div class="npw-badge"><span class="npw-bp">PLAN</span><span class="npw-bl">D</span></div>
-        <div class="npw-titles">
-          <div class="npw-tlabel">ソレイユの丘</div>
-          <h2>南フランスの非日常</h2>
-        </div>
-      </div>
-      <figure class="npw-photo"><img src="https://kfgopro.com/wordpress/wp-content/uploads/2026/05/planD-1024x768.jpg" alt="プランD ソレイユの丘"></figure>
-      <div class="npw-meta">
-        <div class="npw-metarow"><span class="npw-mlabel">移動</span><span class="npw-mtext">車</span></div>
-        <div class="npw-metarow"><span class="npw-mlabel">雰囲気</span>
-          <div class="npw-tags"><span class="npw-tag">南フランス</span><span class="npw-tag">プロヴァンス風</span><span class="npw-tag">お花畑</span><span class="npw-tag">非日常感</span></div>
-        </div>
-      </div>
-      <div class="npw-tlhead">行程（目安）</div>
-      <div class="npw-timeline">
-        <div class="npw-step"><span class="npw-time">08:30</span><div class="npw-act">横浜駅 出発（車）</div></div>
-        <div class="npw-step"><span class="npw-time">09:30</span><div class="npw-act">ソレイユの丘 到着・撮影開始<br><span class="npw-note">（ポピー・紫陽花エリア、風車、プロヴァンス広場など）</span></div></div>
-        <div class="npw-step"><span class="npw-time">11:00</span><div class="npw-act">撮影終了・帰路</div></div>
         <div class="npw-step is-end"><span class="npw-time">12:00</span><div class="npw-act">横浜駅 解散</div></div>
       </div>
     </section>
