@@ -186,6 +186,89 @@
 .nemu-plans-wrap .npw-step.is-end::before{background:var(--accent);}
 .nemu-plans-wrap .npw-step.is-end .npw-act{font-weight:700;}
 
+/* ---------- meeting ---------- */
+.nemu-plans-wrap .npw-meeting{
+  display:flex;align-items:stretch;gap:0;
+  background:#fff;border-radius:24px;
+  box-shadow:0 16px 48px -24px rgba(120,110,100,.28), 0 2px 0 rgba(0,0,0,.01);
+  margin-bottom:clamp(36px,6vw,56px);
+  overflow:hidden;
+  border:2px solid rgba(156,209,234,.35);
+}
+.nemu-plans-wrap .npw-meeting-timecol{
+  flex:0 0 auto;
+  width:clamp(72px,16vw,90px);
+  background:var(--sky-soft);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;padding:clamp(16px,3vw,24px) 8px;
+  border-right:2px solid rgba(156,209,234,.4);
+}
+.nemu-plans-wrap .npw-meeting-timecol .mtime-num{
+  font-family:"Klee One",serif;font-weight:600;
+  font-size:clamp(22px,5.5vw,30px);color:var(--sky);line-height:1.1;
+}
+.nemu-plans-wrap .npw-meeting-timecol .mtime-label{
+  font-size:clamp(10px,2.2vw,11px);letter-spacing:.14em;
+  color:var(--sky);font-weight:700;
+}
+.nemu-plans-wrap .npw-meeting-body{
+  flex:1;padding:clamp(18px,3.5vw,28px) clamp(16px,3.5vw,28px);
+}
+.nemu-plans-wrap .npw-meeting-eyebrow{
+  font-size:clamp(10px,2.2vw,11px);letter-spacing:.22em;font-weight:700;
+  color:var(--sky);margin-bottom:6px;
+}
+.nemu-plans-wrap .npw-meeting-place{
+  font-size:clamp(18px,4.5vw,26px);font-weight:900;color:#4a4540;
+  line-height:1.4;margin-bottom:clamp(10px,2vw,14px);
+}
+.nemu-plans-wrap .npw-meeting-place .mplace-em{
+  color:var(--sky);
+}
+.nemu-plans-wrap .npw-meeting-guide{
+  font-family:"Klee One",serif;
+  font-size:clamp(13px,2.9vw,15px);color:var(--ink-soft);
+  line-height:1.85;
+  background:var(--sky-soft);
+  border-radius:12px;
+  padding:clamp(10px,2vw,14px) clamp(12px,2.5vw,18px);
+}
+.nemu-plans-wrap .npw-meeting-guide strong{
+  color:var(--sky);font-weight:700;
+}
+.nemu-plans-wrap .npw-meeting-steps{
+  list-style:none;padding:0;margin:0;
+  display:flex;flex-direction:column;gap:clamp(8px,1.8vw,12px);
+}
+.nemu-plans-wrap .npw-meeting-steps li{
+  display:flex;align-items:baseline;gap:10px;line-height:1.75;
+}
+.nemu-plans-wrap .npw-meeting-steps li::before{
+  content:counter(step);counter-increment:step;
+  flex:0 0 auto;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--sky);color:#fff;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;top:1px;
+}
+.nemu-plans-wrap .npw-meeting-steps{counter-reset:step;}
+.nemu-plans-wrap .npw-meeting-maplink{
+  display:flex;align-items:center;gap:8px;
+  margin-top:clamp(10px,2vw,14px);
+  padding:clamp(9px,1.8vw,12px) clamp(14px,3vw,18px);
+  background:#fff;border-radius:10px;
+  border:1.5px solid var(--sky);
+  color:var(--sky);
+  font-size:clamp(13px,2.8vw,14px);font-weight:700;
+  text-decoration:none;
+  transition:background .18s,color .18s;
+}
+.nemu-plans-wrap .npw-meeting-maplink:hover{
+  background:var(--sky);color:#fff;
+}
+.nemu-plans-wrap .npw-meeting-maplink-arrow{margin-left:auto;font-size:1.1em;}
+
 /* ---------- closing ---------- */
 .nemu-plans-wrap .npw-closing{
   text-align:center;max-width:560px;margin:clamp(20px,4vw,40px) auto 0;
@@ -233,6 +316,30 @@
         <span>12:00 横浜駅 解散</span>
       </div>
     </header>
+
+    <!-- ★ 待ち合わせ場所 -->
+    <div class="npw-meeting">
+      <div class="npw-meeting-timecol">
+        <span class="mtime-num">8:30</span>
+        <span class="mtime-label">AM</span>
+      </div>
+      <div class="npw-meeting-body">
+        <div class="npw-meeting-eyebrow">MEETING POINT &nbsp;/&nbsp; 待ち合わせ場所</div>
+        <div class="npw-meeting-place">横浜駅 <span class="mplace-em">東口ロータリー</span></div>
+        <div class="npw-meeting-guide">
+          <ol class="npw-meeting-steps">
+            <li><strong>「中央北改札」</strong>または<strong>「中央南改札」</strong>から出る</li>
+            <li><strong>「東口」</strong>と書かれた階段・エスカレーターの手前（ルミネの脇）から地上へ上がる</li>
+            <li>地上に出て、喫煙所や公衆トイレがある広場のところで車を停めてお待ちしています</li>
+          </ol>
+          <a class="npw-meeting-maplink" href="https://www.orion-ski.jp/fair/special/route/pdf/yokohama01.pdf" target="_blank" rel="noopener">
+            <span class="npw-meeting-maplink-icon">🗺</span>
+            <span class="npw-meeting-maplink-text">写真付き案内図を見る（PDF）</span>
+            <span class="npw-meeting-maplink-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- ② プランA -->
     <section class="npw-plan npw-a">
